@@ -1,11 +1,11 @@
+import { UserModule } from '@itaquera/auth';
 import { Module } from '@nestjs/common';
 
-import { PrismaModule } from '@itaquera/prisma';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
