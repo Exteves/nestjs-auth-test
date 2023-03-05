@@ -2,11 +2,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "strict": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
@@ -14,7 +16,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@itaquera/prisma": ["libs/prisma/src"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
