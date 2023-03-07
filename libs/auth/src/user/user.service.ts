@@ -20,11 +20,9 @@ export class UserService {
     return new UserEntity(createdUser);
   }
 
-  async findByEmail(email: string): Promise<UserEntity> {
-    const foundUser = await this.prismaService.user.findUnique({
+  findByEmail(email: string): Promise<UserEntity> {
+    return this.prismaService.user.findUnique({
       where: { email },
     });
-
-    return new UserEntity(foundUser);
   }
 }
