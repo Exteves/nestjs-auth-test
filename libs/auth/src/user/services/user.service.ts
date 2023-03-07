@@ -2,8 +2,8 @@ import { PrismaService } from '@itaquera/prisma';
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UserEntity } from './entities/user.entity';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UserEntity } from '../entities/user.entity';
 
 @Injectable()
 export class UserService {
