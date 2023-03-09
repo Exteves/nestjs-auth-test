@@ -17,8 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@itaquera/prisma": ["libs/prisma/src"],
-      "@itaquera/auth": ["libs/auth/src"]
+      "@church/user": ["libs/user/src"],
+      "@church/auth": ["libs/auth/src"],
+      "@church/prisma": ["libs/prisma/src"]
     }
   },
   "exclude": ["node_modules", "tmp"]

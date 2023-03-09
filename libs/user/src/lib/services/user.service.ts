@@ -1,4 +1,4 @@
-import { PrismaService } from '@itaquera/prisma';
+import { PrismaService } from '@church/prisma';
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';

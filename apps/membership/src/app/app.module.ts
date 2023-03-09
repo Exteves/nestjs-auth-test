@@ -1,4 +1,5 @@
-import { AuthModule, JwtAuthGuard, UserModule } from '@itaquera/auth';
+import { AuthModule, JwtAuthGuard } from '@church/auth';
+import { UserModule } from '@church/user';
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 
