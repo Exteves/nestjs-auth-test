@@ -17,9 +17,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@church/user": ["libs/user/src"],
       "@church/auth": ["libs/auth/src"],
-      "@church/prisma": ["libs/prisma/src"]
+      "@church/prisma": ["libs/prisma/src"],
+      "@church/user": ["libs/user/src"]
     }
   },
   "exclude": ["node_modules", "tmp"]
