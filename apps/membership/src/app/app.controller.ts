@@ -1,3 +1,4 @@
+import { CurrentUser, UserEntity } from '@itaquera/auth';
 import { Controller, Get } from '@nestjs/common';
 
 import { AppService } from './app.service';
@@ -9,5 +10,10 @@ export class AppController {
   @Get()
   getData() {
     return this.appService.getData();
+  }
+
+  @Get('me')
+  getMe(@CurrentUser() user: UserEntity): UserEntity {
+    return user;
   }
 }
