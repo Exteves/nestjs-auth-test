@@ -1,33 +1,35 @@
-import { useState } from "react";
+import { useMutation } from "react-query";
 import { postLogin } from "./login-api";
-import { LoginState } from "./login.interface";
-
-const initialState: LoginState = {
-  email: '',
-  password: '',
-};
+import { LoginPayload } from "./login.interface";
 
 export function Login() {
-    const [login, setLogin] = useState(initialState);
-    const [jwt, setJwt] = useState('');
+    const signIn = useMutation((login: LoginPayload) => {        
+        return postLogin(login)
+    }, {
+        retry: 5,
+        onSuccess: (data) => {
+            localStorage.setItem('access_token', data?.access_token as string)
+        },
+    });
 
-    const updateLogin = (e: { target: { name: any; value: any; }; }) => {
-        setLogin({
-            ...login,
-            [e.target.name]: e.target.value
-        })
+    const { isLoading } = signIn;
+
+    if (isLoading) {
+        return (<>Loading innit</>)
     }
     
-    const handleLogin = (e: { preventDefault: () => void; }) => {
+    const handleLogin = (e: any) => {
         e.preventDefault();
-        postLogin(login).then(({ access_token }) => setJwt(access_token))
+        signIn.mutate({
+            [e.target[0].name]: e.target[0].value,
+            [e.target[1].name]: e.target[1].value
+        } as unknown as LoginPayload);
     }
-
     
     return (
         <form method="post" onSubmit={handleLogin} className="grid">
-            <input type="text" name="email" onChange={updateLogin}/>
-            <input type="password" name="password" onChange={updateLogin}/>
+            <input type="text" name="email"/>
+            <input type="password" name="password"/>
             <button type="submit">Login</button>
         </form>
     );

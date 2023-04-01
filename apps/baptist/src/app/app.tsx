@@ -1,11 +1,14 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes } from 'react-router-dom';
 import Header from './header/header';
 import { Login } from './login/login';
 
+const queryClient = new QueryClient()
+
 export function App() {
   return (
-    <>
-      <Header></Header>
+    <QueryClientProvider client={queryClient}>
+      <Header/>
       <Routes>
         <Route
           path="/login"
@@ -14,7 +17,7 @@ export function App() {
           }
         />
       </Routes>
-    </>
+    </QueryClientProvider>
   );
 }
 
