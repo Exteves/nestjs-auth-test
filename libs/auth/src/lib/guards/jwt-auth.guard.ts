@@ -1,3 +1,4 @@
+import { UnauthorizedError } from '@church/models';
 import { IS_PUBLIC_KEY } from '@church/utils';
 import {
   ExecutionContext,
@@ -6,7 +7,6 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
-import { UnauthorizedError } from '../models/unauthorized.error';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {

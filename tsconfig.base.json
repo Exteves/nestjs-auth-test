@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "strict": false,
+    "strict": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@church/auth": ["libs/auth/src"],
+      "@church/models": ["libs/models/src/index.ts"],
       "@church/prisma": ["libs/prisma/src"],
       "@church/user": ["libs/user/src"],
       "@church/utils": ["libs/utils/src/index.ts"]

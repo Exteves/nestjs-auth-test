@@ -1,3 +1,4 @@
+import { UserEntity } from '@church/models';
 import { IsPublic } from '@church/utils';
 import {
   Body,
@@ -7,7 +8,6 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { CreateUserDto } from '../dto/create-user.dto';
-import { UserEntity } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
 
 @Controller('user')

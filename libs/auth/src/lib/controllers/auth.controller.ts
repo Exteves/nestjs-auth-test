@@ -1,4 +1,4 @@
-import { AuthRequest } from '@church/user';
+import { AuthRequest } from '@church/models';
 import { IsPublic } from '@church/utils';
 import { Controller, Post, Request } from '@nestjs/common';
 import { UseGuards } from '@nestjs/common/decorators/core/use-guards.decorator';

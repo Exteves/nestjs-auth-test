@@ -1,9 +1,8 @@
-import { UserEntity, UserService } from '@church/user';
+import { UserEntity, UserPayload, UserToken } from '@church/models';
+import { UserService } from '@church/user';
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
-import { UserPayload } from '../models/user-payload.interface';
-import { UserToken } from '../models/user-token.interface';
 
 @Injectable()
 export class AuthService {

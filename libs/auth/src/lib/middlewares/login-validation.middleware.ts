@@ -1,3 +1,4 @@
+import { LoginRequestBody } from '@church/models';
 import {
   BadRequestException,
   Injectable,
@@ -5,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { validate } from 'class-validator';
 import { NextFunction, Request, Response } from 'express';
-import { LoginRequestBody } from '../models/login-request-body';
 
 @Injectable()
 export class LoginValidationMiddleware implements NestMiddleware {
@@ -20,7 +20,7 @@ export class LoginValidationMiddleware implements NestMiddleware {
 
     if (validations.length) {
       throw new BadRequestException(
-        validations.reduce((acc, curr) => {
+        validations.reduce((acc: any, curr: any) => {
           return [...acc, ...Object.values(curr.constraints)];
         }, [])
       );
