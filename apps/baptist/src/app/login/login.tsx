@@ -25,7 +25,7 @@ export function Login() {
 
     
     return (
-        <form method="post" onSubmit={handleLogin}>
+        <form method="post" onSubmit={handleLogin} className="grid">
             <input type="text" name="email" onChange={updateLogin}/>
             <input type="password" name="password" onChange={updateLogin}/>
             <button type="submit">Login</button>
