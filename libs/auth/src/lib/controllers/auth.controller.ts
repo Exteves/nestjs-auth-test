@@ -1,10 +1,10 @@
+import { AuthRequest } from '@church/user';
+import { IsPublic } from '@church/utils';
 import { Controller, Post, Request } from '@nestjs/common';
 import { UseGuards } from '@nestjs/common/decorators/core/use-guards.decorator';
 import { HttpCode } from '@nestjs/common/decorators/http/http-code.decorator';
 import { HttpStatusCode } from 'axios';
-import { IsPublic } from '../decorators/is-public.decorator';
 import { LocalAuthGuard } from '../guards/local-auth.guard';
-import { AuthRequest } from '../models/auth-request.interface';
 import { AuthService } from '../services/auth.service';
 
 @Controller('auth')

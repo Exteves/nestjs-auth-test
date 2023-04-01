@@ -19,7 +19,8 @@
     "paths": {
       "@church/auth": ["libs/auth/src"],
       "@church/prisma": ["libs/prisma/src"],
-      "@church/user": ["libs/user/src"]
+      "@church/user": ["libs/user/src"],
+      "@church/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

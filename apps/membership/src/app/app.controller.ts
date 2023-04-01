@@ -1,5 +1,4 @@
-import { CurrentUser } from '@church/auth';
-import { UserEntity } from '@church/user';
+import { CurrentUser, UserEntity } from '@church/user';
 import { Controller, Get } from '@nestjs/common';
 
 import { AppService } from './app.service';

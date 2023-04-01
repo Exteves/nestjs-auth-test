@@ -1,3 +1,4 @@
+import { IsPublic } from '@church/utils';
 import {
   Body,
   ClassSerializerInterceptor,
@@ -13,6 +14,7 @@ import { UserService } from '../services/user.service';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @IsPublic()
   @UseInterceptors(ClassSerializerInterceptor)
   @Post('sign-up')
   create(@Body() createUserDto: CreateUserDto): Promise<UserEntity> {
